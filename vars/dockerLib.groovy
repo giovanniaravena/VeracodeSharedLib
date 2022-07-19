@@ -1,3 +1,3 @@
 def build(Map params){
-  echo "build"
+  echo "build ${params.Saludo}"
 }
