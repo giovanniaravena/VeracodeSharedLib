@@ -17,7 +17,6 @@ def scanArtifact(Map params){
         --file ${params.file} \
         --policy_file 'DESSEG.json' \
         --timeout '3' \
-        --verbose 'true' \
         --project_name '${params.ApplicationName}' "
         // --fail_on_severity='Very High, High, Medium' \
         // --fail_on_cwe='80' \
