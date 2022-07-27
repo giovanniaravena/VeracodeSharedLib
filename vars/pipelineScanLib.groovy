@@ -16,7 +16,6 @@ def scanArtifact(Map params){
         --veracode_api_key ${SecretCredentialsVeracode} \
         --file ${params.file} \
         --policy_file 'DESSEG.json' \
-
         --timeout '3' \
         --verbose 'true' \
         --project_name '${params.ApplicationName}' "
