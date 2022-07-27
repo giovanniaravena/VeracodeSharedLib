@@ -6,7 +6,6 @@ def scanArtifact(Map params){
         --veracode_api_id ${params.Id} \
         --veracode_api_key ${SecretCredentialsVeracode} \
         --file ${params.file} \
-        --policy_name 'DESSEG'\
         --timeout '3' \
         --project_name '${params.ApplicationName}' "
         // --fail_on_severity='Very High, High, Medium' \
