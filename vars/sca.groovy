@@ -5,12 +5,12 @@ def scanProject(Map params){
   // }
 
   withCredentials([string(credentialsId: "${params.Id}", variable: 'SRCCLR_API_TOKEN')]) {
-    sh '''
+    sh "
         export SCAN_DIR=${params.file}
         touch SCA_Results_Build_${BUILD_NUMBER}.txt
         curl -sSL https://download.sourceclear.com/ci.sh | bash -s -- scan --update-advisor 2>&1 | tee SCA_Results_Build_${BUILD_NUMBER}.txt
         ! grep -E 'CVE-2021-45046|CVE-2021-22118' SCA_Results_Build_${BUILD_NUMBER}.txt
-    '''
+    "
     
     // sh "cat filtered_results.json"
     // sh "cat results.json"
