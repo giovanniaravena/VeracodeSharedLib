@@ -22,6 +22,6 @@ def scanProject(Map params){
     // sh "cat results.json"
     // sh "cat DESSEG.json"
 
-    sh "cat SCA_Results_Build_${BUILD_NUMBER}.txt"
+    // sh "cat SCA_Results_Build_${BUILD_NUMBER}.txt"
   }
 }
