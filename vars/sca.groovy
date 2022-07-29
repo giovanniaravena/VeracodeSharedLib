@@ -1,8 +1,8 @@
 def scanProject(Map params){
-  options {
-      // only keep the last x build logs and artifacts (for space saving)
-      buildDiscarder(logRotator(numToKeepStr: '20', artifactNumToKeepStr: '20'))
-  }
+  // options {
+  //     // only keep the last x build logs and artifacts (for space saving)
+  //     buildDiscarder(logRotator(numToKeepStr: '20', artifactNumToKeepStr: '20'))
+  // }
 
   withCredentials([string(credentialsId: "${params.Id}", variable: 'SRCCLR_API_TOKEN')]) {
     sh '''
