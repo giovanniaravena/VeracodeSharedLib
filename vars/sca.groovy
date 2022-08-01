@@ -8,8 +8,11 @@ def scanProject(Map params){
     sh '''
         export SCAN_DIR=.
         touch SCA_Results_Build_${BUILD_NUMBER}.txt
-        curl -sSL https://download.sourceclear.com/ci.sh | bash -s -- scan --update-advisor 2>&1 | tee SCA_Results_Build_${BUILD_NUMBER}.txt
+        curl -sSL https://download.sourceclear.com/ci.sh | bash -s --json -- scan --update-advisor 2>&1 | tee SCA_Results_Build_${BUILD_NUMBER}.txt
     '''
+
+    // sh "curl -sSL https://download.sourceclear.com/ci.sh | bash -s -- scan ."
+
     // sh '''
     //     export SCAN_DIR=${params.file}
     //     touch SCA_Results_Build_${BUILD_NUMBER}.txt
@@ -21,7 +24,7 @@ def scanProject(Map params){
     // sh "touch SCA_Results_Build_${BUILD_NUMBER}.txt"
     // sh "curl -sSL https://download.sourceclear.com/ci.sh | bash -s -- scan --update-advisor 2>&1 | tee SCA_Results_Build_${BUILD_NUMBER}.txt ! grep -E 'CVE-2021-45046|CVE-2021-22118' SCA_Results_Build_${BUILD_NUMBER}.txt"
    
-    sh "curl -sSL https://download.sourceclear.com/ci.sh | bash -s -- scan ."
+ 
     
     // sh "cat filtered_results.json"
     // sh "cat results.json"
