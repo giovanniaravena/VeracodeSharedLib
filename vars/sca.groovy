@@ -11,6 +11,8 @@ def scanProject(Map params){
         curl -sSL https://download.sourceclear.com/ci.sh | bash -s --json -- scan --update-advisor 2>&1 | tee SCA_Results_Build_${BUILD_NUMBER}.txt
     '''
 
+    sh "cat SCA_Results_Build_${BUILD_NUMBER}.txt"
+
     // sh "curl -sSL https://download.sourceclear.com/ci.sh | bash -s -- scan ."
 
     // sh '''
